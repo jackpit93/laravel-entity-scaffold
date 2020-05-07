@@ -59,7 +59,7 @@ Migrations:
 ****_**_**_******_create_products_table
 ```
 
-## <g-emoji class="g-emoji" alias="gear" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2669.png">💎</g-emoji> change default paths
+## <g-emoji class="g-emoji" alias="gear" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2669.png">⚙️</g-emoji> change default paths
 If you change default path.first see `config/entity-scaffold.php` file:
 ```php
 <?php
