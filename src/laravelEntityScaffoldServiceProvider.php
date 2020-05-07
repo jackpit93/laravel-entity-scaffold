@@ -14,7 +14,7 @@ class laravelEntityScaffoldServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+//        $this->mergeConfigFrom(__DIR__.'/../config/laravel-entity-scaffold.php','laravel-entity-scaffold');
     }
 
     /**
@@ -24,8 +24,15 @@ class laravelEntityScaffoldServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->commands([
-            EntityScaffold::class
-        ]);
+        if ($this->app->runningInConsole()) {
+            $this->publishes([
+                __DIR__.'/../config/entity-scaffold.php' => config_path('entity-scaffold.php')
+            ],'entity-scaffold');
+            $this->commands([
+                EntityScaffold::class
+            ]);
+
+        }
+
     }
 }

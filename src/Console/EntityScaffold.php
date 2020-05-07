@@ -21,40 +21,74 @@ class EntityScaffold extends Command
      */
     protected $description = 'Create (model,migration,controller,request,resource) for your entity.';
 
-    /**
-     * Create a new command instance.
-     *
-     * @return void
-     */
+
     public function __construct()
     {
         parent::__construct();
     }
 
-    /**
-     * Execute the console command.
-     *
-     * @return mixed
-     */
     public function handle()
     {
-        $entityName =ucfirst($this->Argument('entity'));
+        $entityName = ucfirst($this->Argument('entity'));
 
-        \Artisan::call('make:controller '.Str::plural($entityName).'Controllers');
-        $this->info('--- Controller created  successfully');
+        $this->createController($entityName);
 
-        \Artisan::call('make:model Models/'.$entityName.'/'.$entityName .' -m');
-        $this->info('--- Model created  successfully');
-        $this->info('--- Migration created  successfully');
+        $this->createModel($entityName);
 
-        \Artisan::call('make:request '.$entityName.'/Store'.$entityName);
-        $this->info('--- Request created  successfully');
+        $this->createRequest($entityName);
 
-        \Artisan::call('make:resource '.$entityName.'/'.$entityName.'Resource');
-        \Artisan::call('make:resource '.$entityName.'/'.Str::plural($entityName) .'Collection');
-        $this->info('--- Resource created  successfully');
+        $this->createResource($entityName);
 
 
         $this->info('=== Everything was done right');
+    }
+
+    public function createController(string $entityName): void
+    {
+        \Artisan::call('make:controller '
+            . $this->normalizePath(config('entity-scaffold.controllers_path'))
+            . Str::plural($entityName) . 'Controllers');
+
+        $this->info('--- Controller created  successfully');
+    }
+
+    public function createModel(string $entityName): void
+    {
+        \Artisan::call('make:model '
+            . $this->normalizePath(config('entity-scaffold.models_path'))
+            . $entityName . DIRECTORY_SEPARATOR . $entityName . ' -m');
+        $this->info('--- Model created  successfully');
+        $this->info('--- Migration created  successfully');
+    }
+
+    public function createRequest(string $entityName): void
+    {
+        \Artisan::call('make:request '
+            . $this->normalizePath(config('entity-scaffold.requests_path'))
+            . $entityName . DIRECTORY_SEPARATOR . 'Store' . $entityName);
+        $this->info('--- Request created  successfully');
+    }
+
+    public function createResource(string $entityName): void
+    {
+        \Artisan::call('make:resource '
+            . $this->normalizePath(config('entity-scaffold.resources_path'))
+            . $entityName . DIRECTORY_SEPARATOR . $entityName . 'Resource');
+
+        \Artisan::call('make:resource '
+            . $this->normalizePath(config('entity-scaffold.resources_path'))
+            . $entityName . DIRECTORY_SEPARATOR . Str::plural($entityName) . 'Collection');
+        $this->info('--- Resource created  successfully');
+    }
+
+    private function normalizePath($path): string
+    {
+
+        $latestCharacter = substr($path, -1);
+        if ($latestCharacter === DIRECTORY_SEPARATOR) {
+            return $path;
+        }
+        return $path . DIRECTORY_SEPARATOR;
+
     }
 }
