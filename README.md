@@ -1,4 +1,4 @@
-##Enter your entity and I make anything for your entity 
+## Enter your entity and I make anything for your entity 
  
 This package will help you to create a model,migration,controller,request,resource just by writing the name. 
 
