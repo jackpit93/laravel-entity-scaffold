@@ -1,0 +1,31 @@
+{
+    "name": "mohammad-najjary/laravel-entity-scaffold",
+    "description": "Create (model,migration,controller,request,resource) for your entity.",
+    "keywords": [
+        "scaffolding",
+        "laravel",
+        "entity"
+    ],
+    "homepage": "https://github.com/mohammad-najjary/laravel-entity-scaffold",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "mohammad-najjary",
+            "email": "mr.najjary@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "MohammadNaj\\laravelEntityScaffold\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "MohammadNaj\\laravelEntityScaffold\\laravelEntityScaffoldServiceProvider"
+            ]
+        }
+    }
+}
