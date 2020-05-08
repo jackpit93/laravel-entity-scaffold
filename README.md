@@ -58,7 +58,62 @@ Migrations:
 ```bash
 ****_**_**_******_create_products_table
 ```
+## <g-emoji class="g-emoji" alias="gear" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2669.png">💎</g-emoji>Options
+By entering the command below see options list:
+```bash
+php artisan make:entity --help
+```
+output:
+```bash
+Description:
+  Create (model,migration,controller,request,resource) for your entity.
 
+Usage:
+  make:entity [options] [--] <entity>
+
+Arguments:
+  entity                Name of the entity
+
+Options:
+      --con             Ignore making the controller
+      --mod             Ignore making the model
+      --mig             Ignore making the migration
+      --res             Ignore making the resource
+      --req             Ignore making the request
+  -h, --help            Display this help message
+  -q, --quiet           Do not output any message
+  -V, --version         Display this application version
+      --ansi            Force ANSI output
+      --no-ansi         Disable ANSI output
+  -n, --no-interaction  Do not ask any interactive question
+      --env[=ENV]       The environment the command should run under
+  -v|vv|vvv, --verbose  Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug
+
+```
+####how to ignore make Model,controller, etc?
+All you have to do is use the first three letters of each class,eg:
+
+I ignore migration for order entity
+```bash
+$ php artisan make:entity order --mig
+--- Controller created  successfully
+--- Model created  successfully
+ -  -  - Ignore making the migration
+--- Request created  successfully
+--- Resource created  successfully
+
+```
+
+Now i ignore all except migration
+```bash
+$ php artisan make:entity dart --req --res --con --mod  
+ -  -  - Ignore making the controller
+ -  -  - Ignore making the model
+--- Migration created  successfully
+ -  -  - Ignore making the request
+ -  -  - Ignore making the resource
+
+``` 
 ## <g-emoji class="g-emoji" alias="gear" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2669.png">💎</g-emoji> change default paths
 If you change default path.first see `config/entity-scaffold.php` file:
 ```php
