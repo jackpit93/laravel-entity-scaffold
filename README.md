@@ -24,7 +24,7 @@ The default paths are set in config/entity-scaffold.php. Publish the config to c
 ```bash
 php artisan vendor:publish  --tag="entity-scaffold"
 ```
-## <g-emoji class="g-emoji" alias="gem" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f48e.png">💎</g-emoji> How to Use?
+## <g-emoji class="g-emoji" alias="gem" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f48e.png">🤔</g-emoji> How to Use?
 
 
 ```bash
@@ -58,7 +58,7 @@ Migrations:
 ```bash
 ****_**_**_******_create_products_table
 ```
-## <g-emoji class="g-emoji" alias="gear" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2669.png">💎</g-emoji>Options
+## <g-emoji class="g-emoji" alias="gear" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2669.png">⚙️</g-emoji>Options
 By entering the command below see options list:
 ```bash
 php artisan make:entity --help
@@ -90,10 +90,9 @@ Options:
   -v|vv|vvv, --verbose  Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug
 
 ```
-####how to ignore make Model,controller, etc?
+#### how to ignore make Model,controller, etc?
 All you have to do is use the first three letters of each class,eg:
 
-<<<<<<< HEAD
 I ignore migration for order entity
 ```bash
 $ php artisan make:entity order --mig
