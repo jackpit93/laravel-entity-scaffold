@@ -65,7 +65,7 @@ class EntityScaffold extends Command
     {
         \Artisan::call('make:controller '
             . $this->normalizePath(config('entity-scaffold.controllers_path'))
-            . Str::plural($entityName) . 'Controllers');
+            . Str::plural($entityName) . 'Controller');
         $this->info('--- Controller created  successfully');
     }
 
