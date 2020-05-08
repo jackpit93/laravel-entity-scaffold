@@ -93,6 +93,7 @@ Options:
 ####how to ignore make Model,controller, etc?
 All you have to do is use the first three letters of each class,eg:
 
+<<<<<<< HEAD
 I ignore migration for order entity
 ```bash
 $ php artisan make:entity order --mig
@@ -114,7 +115,9 @@ $ php artisan make:entity dart --req --res --con --mod
  -  -  - Ignore making the resource
 
 ``` 
-## <g-emoji class="g-emoji" alias="gear" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2669.png">💎</g-emoji> change default paths
+
+## <g-emoji class="g-emoji" alias="gear" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2669.png">⚙️</g-emoji> change default paths
+
 If you change default path.first see `config/entity-scaffold.php` file:
 ```php
 <?php
