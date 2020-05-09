@@ -33,7 +33,7 @@ class EntityScaffold extends Command
     public function __construct()
     {
         parent::__construct();
-        $this->laravelEntityScaffold = new laravelEntityScaffold();
+        $this->laravelEntityScaffold = resolve(laravelEntityScaffold::class);
 
     }
 

@@ -2,7 +2,7 @@
 
 namespace MohammadNaj\laravelEntityScaffold;
 
-use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Str;
 
 class laravelEntityScaffold
