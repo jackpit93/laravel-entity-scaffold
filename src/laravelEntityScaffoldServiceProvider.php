@@ -14,7 +14,6 @@ class laravelEntityScaffoldServiceProvider extends ServiceProvider
      */
     public function register()
     {
-//        $this->mergeConfigFrom(__DIR__.'/../config/laravel-entity-scaffold.php','laravel-entity-scaffold');
     }
 
     /**
